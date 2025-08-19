@@ -37,16 +37,12 @@ public class MapGenerator : MonoBehaviour
         [Range(0, 3)]
         public int CorridorPadding; // Not enforced, prefer to have padding. but sometimes might not be able to have
         
-        [Header("Debug")]
+        [Header("Debug Gizmos")]
         [Range(0, 1f)]
-        public float DebugGizmoAlpha;
+        public float DebugAlpha;
         [Range(0, 2f)]
         public float DebugSpacing;
         public bool DebugShowId;
-        public bool DebugTestBool;
-        public int DebugTestInt;
-        public int DebugTestCounter;
-        public float DebugTestFloat;
     }
     
     [SerializeField] private TilemapPainter tilemapPainter;
@@ -84,7 +80,6 @@ public class MapGenerator : MonoBehaviour
 
     public void Generate(int seed)
     {
-        config.DebugTestCounter = 0;
         Stopwatch stopwatch = Stopwatch.StartNew();
         Random.InitState(seed);
         Tree.Generate(config);

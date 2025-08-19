@@ -190,7 +190,7 @@ public class TreeNode
                 8 => Color.lightGreen,
                 _ => Color.white
             };
-            color.a = _config.DebugGizmoAlpha;
+            color.a = _config.DebugAlpha;
             Gizmos.color = color;
             Gizmos.DrawCube(Position, Size - _config.DebugSpacing * Vector2.one);
 #if UNITY_EDITOR
